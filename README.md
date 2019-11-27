@@ -32,3 +32,5 @@
 11.docker rm xxx			删除容器
 
 12.docker rmi xxx 			删除镜像
+
+13.docker exec -i -t xxx bash   进入运行的容器，比较常用的方式
