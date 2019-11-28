@@ -1,0 +1,13 @@
+FROM java:8
+MAINTAINER wanghe
+
+COPY spring-valid-0.0.1-SNAPSHOT.jar /properties.jar
+ENV PARAMS=""
+EXPOSE 8088
+#ENTRYPOINT  ["sh","-c","java $params -D -jar /properties.jar"]
+ENTRYPOINT  ["sh","-c","java $PARAMS -jar /properties.jar"]
+
+#创建镜像
+#docker build -t wh-param .
+#运行镜像 （params参数传递时，参数前要加一个-D  ）
+#docker run -e PARAMS="-Durl=jdbc:mysql/127.0.0.1:1521  -Dusername=wanghe  -Dpasswd=123456" -p 8088:8088 wh-param
